@@ -42,6 +42,9 @@ class ViewController: UIViewController {
     @IBAction func saveEditButton(_ sender: UIButton) {
         descriptionField.isEditable = !descriptionField.isEditable
         if descriptionField.isEditable {
+            if descriptionField.text == "Description" {
+                descriptionField.text = ""
+            }
             descriptionField.becomeFirstResponder()
         }else{
             descriptionField.resignFirstResponder()
