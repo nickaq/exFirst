@@ -101,6 +101,14 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="50w-AI-6vZ">
+                                <rect key="frame" x="20" y="609" width="353" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -128,6 +136,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionField" destination="50w-AI-6vZ" id="ymw-hw-lKM"/>
+                        <outlet property="nameField" destination="lB3-MF-bJS" id="h40-R1-boN"/>
                         <outlet property="showGallery" destination="ekd-dO-Yez" id="8FQ-dF-hnG"/>
                     </connections>
                 </viewController>

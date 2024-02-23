@@ -9,6 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var picturesName = ["Food", "Cat", "Forest", "Tree"]
+    var descriptions = ["Description", "Description","Description","Description"]
+    
+    @IBOutlet weak var descriptionField: UITextView!
+    @IBOutlet weak var nameField: UITextField!
     var gallery = [#imageLiteral(resourceName: "duy.jpeg"),#imageLiteral(resourceName: "pervaya.jpeg"),#imageLiteral(resourceName: "tretya.jpeg"),#imageLiteral(resourceName: "tree.jpeg")]
     @IBOutlet weak var showGallery: UIImageView!
     var index = 0
@@ -30,9 +35,21 @@ class ViewController: UIViewController {
     func updateImage(){
         let imageName = gallery[index]
         showGallery.image = imageName
+        nameField.text = picturesName[index]
+        descriptionField.text = descriptions[index]
     }
     
     @IBAction func saveEditButton(_ sender: UIButton) {
+        descriptionField.isEditable = !descriptionField.isEditable
+        if descriptionField.isEditable {
+            descriptionField.becomeFirstResponder()
+        }else{
+            descriptionField.resignFirstResponder()
+        }
+        descriptions[index] = descriptionField.text
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        nameField.resignFirstResponder()
     }
     
     
@@ -40,7 +57,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateImage()
-        // Do any additional setup after loading the view.
+        
+        descriptionField.isEditable = false
+        descriptionField.layer.borderWidth = 1.0
+        descriptionField.layer.borderColor = UIColor.systemGray5.cgColor
+        descriptionField.layer.cornerRadius = 10
+        
     }
 
 
