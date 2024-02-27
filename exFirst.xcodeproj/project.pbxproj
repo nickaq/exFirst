@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C42F9A2B8E4A8800165B61 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C42F992B8E4A8800165B61 /* OtherViewController.swift */; };
 		18D190AD2B78DBD8008217B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D190AC2B78DBD8008217B9 /* AppDelegate.swift */; };
 		18D190AF2B78DBD8008217B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D190AE2B78DBD8008217B9 /* SceneDelegate.swift */; };
 		18D190B12B78DBD8008217B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D190B02B78DBD8008217B9 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18C42F992B8E4A8800165B61 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		18D190A92B78DBD8008217B9 /* exFirst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exFirst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D190AC2B78DBD8008217B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D190AE2B78DBD8008217B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				18D190AC2B78DBD8008217B9 /* AppDelegate.swift */,
 				18D190AE2B78DBD8008217B9 /* SceneDelegate.swift */,
 				18D190B02B78DBD8008217B9 /* ViewController.swift */,
+				18C42F992B8E4A8800165B61 /* OtherViewController.swift */,
 				18D190B22B78DBD8008217B9 /* Main.storyboard */,
 				18D190B52B78DBDB008217B9 /* Assets.xcassets */,
 				18D190B72B78DBDB008217B9 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D190B12B78DBD8008217B9 /* ViewController.swift in Sources */,
+				18C42F9A2B8E4A8800165B61 /* OtherViewController.swift in Sources */,
 				18D190AD2B78DBD8008217B9 /* AppDelegate.swift in Sources */,
 				18D190AF2B78DBD8008217B9 /* SceneDelegate.swift in Sources */,
 			);

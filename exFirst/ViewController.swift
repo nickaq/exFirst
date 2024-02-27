@@ -10,9 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var picturesName = ["Food", "Cat", "Forest", "Tree"]
-    var descriptions = ["Description", "Description","Description","Description"]
-    
-    @IBOutlet weak var descriptionField: UITextView!
+    var descriptions = ["Description","Description","Description","Description"]
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var nameField: UITextField!
     var gallery = [#imageLiteral(resourceName: "duy.jpeg"),#imageLiteral(resourceName: "pervaya.jpeg"),#imageLiteral(resourceName: "tretya.jpeg"),#imageLiteral(resourceName: "tree.jpeg")]
     @IBOutlet weak var showGallery: UIImageView!
@@ -33,41 +32,32 @@ class ViewController: UIViewController {
         updateImage()
     }
     func updateImage(){
-        let imageName = gallery[index]
-        showGallery.image = imageName
+        showGallery.image = gallery[index]
         nameField.text = picturesName[index]
-        descriptionField.text = descriptions[index]
+        label.text = descriptions[index]
     }
-    
-    @IBAction func saveEditButton(_ sender: UIButton) {
-        descriptionField.isEditable = !descriptionField.isEditable
-        if descriptionField.isEditable {
-            if descriptionField.text == "Description" {
-                descriptionField.text = ""
-            }
-            descriptionField.becomeFirstResponder()
-        }else{
-            descriptionField.resignFirstResponder()
+    @IBAction func didTapButton(){
+        let vc = storyboard?.instantiateViewController(identifier: "other") as! OtherViewController
+        vc.completionHandler =
+        {
+            text in self.label.text = text
+            self.descriptions[self.index] = text!
         }
-        descriptions[index] = descriptionField.text
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated: true)
+        
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        nameField.resignFirstResponder()
-    }
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateImage()
         
-        descriptionField.isEditable = false
-        descriptionField.layer.borderWidth = 1.0
-        descriptionField.layer.borderColor = UIColor.systemGray5.cgColor
-        descriptionField.layer.cornerRadius = 10
+        nameField.isUserInteractionEnabled = false
         
+        label.layer.borderColor = UIColor.systemGray5.cgColor
+        label.layer.borderWidth = 1
+        label.layer.cornerRadius = 10
+        label.textAlignment = .left
+        label.sizeToFit()
     }
-
-
 }
 
